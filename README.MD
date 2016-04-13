@@ -26,4 +26,4 @@ A porta padrão para o servidor da api é 8000 - Se mudar esta porta é necessá
 A porta padrão para o servidor do webapp é 3000 - Servidor gerado pelo BrowserSync
 
 ---
-![Encurtador1](https://raw.github.com/guiassemany/encurtador-url/master/Docs/pic1.png)
+![Encurtador1](https://github.com/guiassemany/encurtador-url/blob/master/Docs/pic1.png?raw=true)
