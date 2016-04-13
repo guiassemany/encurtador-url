@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['middleware' => ['api']], function () {
+Route::group(['middleware' => ['cors', 'api']], function () {
 
     //Urls
     Route::post('/users/{userid}/urls', '\EncurtadorUrl\Controllers\UrlController@store');
