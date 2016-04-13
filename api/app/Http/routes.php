@@ -1,16 +1,19 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+Route::group(['middleware' => ['api']], function () {
 
-Route::get('/', function () {
-    return view('welcome');
+    //Urls
+    Route::post('/users/{userid}/urls', '\EncurtadorUrl\Controllers\UrlController@store');
+    Route::get('/urls/{shortUrl}', '\EncurtadorUrl\Controllers\UrlController@index');
+    Route::delete('/urls/{shortUrl}', '\EncurtadorUrl\Controllers\UrlController@destroy');
+
+    //Stats
+    Route::get('/stats', '\EncurtadorUrl\Controllers\StatsController@generalStats');
+    Route::get('/users/{userid}/stats', '\EncurtadorUrl\Controllers\StatsController@userStats');
+    Route::get('/stats/{shortUrl}', '\EncurtadorUrl\Controllers\StatsController@urlStats');
+
+    //Users
+    Route::post('/users', '\EncurtadorUrl\Controllers\UserController@store');
+    Route::delete('/users/{userid}', '\EncurtadorUrl\Controllers\UserController@destroy');
+
 });
