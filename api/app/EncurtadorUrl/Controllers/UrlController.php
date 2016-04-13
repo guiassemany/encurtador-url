@@ -5,6 +5,7 @@ namespace EncurtadorUrl\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use EncurtadorUrl\Models\Url;
+use Illuminate\Routing\UrlGenerator;
 
 class UrlController extends BaseController
 {
@@ -31,7 +32,7 @@ class UrlController extends BaseController
           'id' => $url->id,
           'hits' => empty($url->hits) ? 0 : $url->hits,
           'url' => $url->url,
-          'shortUrl' => $url->shortUrl
+          'shortUrl' => url('/'.$url->shortUrl)
         ];
 
         return response()->json($urlResponse, 201);

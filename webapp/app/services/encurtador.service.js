@@ -9,10 +9,15 @@
 
     /* @ngInject */
     function EncurtadorService($http) {
-        this.encurtar = encurtar;
+        this.encurtarUrl = encurtarUrl;
 
-        function encurtar() {
-          
+        function encurtarUrl(url) {
+          return $http({
+               method: 'POST',
+               url: "http://localhost:8000/users/assemany/urls",
+               data: $.param({url: url}),
+               headers : {'Content-Type': 'application/x-www-form-urlencoded'}
+            });
         }
     }
 })();

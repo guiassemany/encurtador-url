@@ -1,16 +1,30 @@
 <div class="row">
 
   <div class="col-lg-12">
+    <form name="formEncurtar" ng-submit="home.encurtarUrl(home.url)">
     <div class="input-group input-group-lg">
-      <input id="url-encurtar" type="url" class="form-control" placeholder="Escreva aqui o link que você deseja encurtar..." required>
+      <input id="url-encurtar" ng-model="home.url" name="url" type="url" class="form-control" placeholder="Escreva aqui o link que você deseja encurtar..." required>
       <span class="input-group-btn">
-      <button class="btn btn-encurtar" type="button">ENCURTAR</button>
+      <button class="btn btn-encurtar" type="submit">ENCURTAR</button>
     </span>
     </div>
+    </form>
   </div>
 
   <div class="col-lg-12">
-    <div id="urlEncurtada"></div>
+    <div id="urlEncurtada">
+      <a ng-if="home.urlEncurtadaTrigger" target="_blank" href="{{home.urlEncurtada}}">
+        <typer
+              words="[home.urlEncurtada]"
+              repeat="false"
+              start-trigger="home.urlEncurtadaTrigger"
+              start-typing="true"
+              type-time='50'
+              start-delay='50'
+              >
+        </typer>
+      </a>
+    </div>
   </div>
 
 </div>

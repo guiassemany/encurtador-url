@@ -73,7 +73,6 @@ body {
 }
 
 #urlEncurtada {
-  display: none;
   padding-top: 15px;
 }
 
@@ -92,5 +91,38 @@ body {
 @media (min-width: 992px) {
   .main-container {
     width: 700px;
+  }
+}
+
+/* Cursor do Typer */
+.typer__cursor {
+  -webkit-animation: blink 1s infinite;
+  -moz-animation: blink 1s infinite;
+  animation: blink 1s infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

@@ -11,10 +11,24 @@
     function HomeController(EncurtadorService) {
         var vm = this;
 
+        vm.url = '';
+        vm.urlEncurtada = '';
+        vm.urlEncurtadaTrigger = false;
+        vm.encurtarUrl = encurtarUrl;
+
         activate();
 
         function activate() {
-          
+
+        }
+
+        function encurtarUrl(url){
+            vm.urlEncurtada = '';
+            vm.urlEncurtadaTrigger = false;
+            EncurtadorService.encurtarUrl(url).then(function(data){
+              vm.urlEncurtada = data.data.shortUrl;
+              vm.urlEncurtadaTrigger = true;
+            });
         }
     }
 })();

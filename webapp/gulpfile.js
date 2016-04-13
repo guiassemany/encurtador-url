@@ -36,6 +36,7 @@ gulp.task('sass', function () {
     .pipe(autoprefixer(config.autoprefixerOptions))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.cssOutputPath))
+    .pipe(browserSync.stream())
     .resume();
 });
 
