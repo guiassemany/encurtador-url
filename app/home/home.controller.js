@@ -5,10 +5,10 @@
         .module('encurtadorUrl')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = [];
+    HomeController.$inject = ['EncurtadorService'];
 
     /* @ngInject */
-    function HomeController() {
+    function HomeController(EncurtadorService) {
         var vm = this;
 
         activate();
