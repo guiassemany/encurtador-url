@@ -3,12 +3,15 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
+var templateCache  = require('gulp-angular-templatecache');
+var concat  = require('gulp-concat');
+var wiredep = require('wiredep').stream;
 
 
 var config = {
     sassPath: './assets/sass/**/*.scss',
-    cssOutputPath: './dist/css/',
-    jsOutputPath: './dist/js/',
+    cssOutputPath: './assets/css/',
+    jsOutputPath: './assets/js/',
     sassOptions: {
       errLogToConsole: true,
       style: 'compressed',
@@ -49,7 +52,7 @@ gulp.task('vendorJS', function () {
 
 gulp.task('font-awesome', function() {
     return gulp.src('./bower_components/font-awesome/fonts/**.*')
-        .pipe(gulp.dest('./public/fonts'));
+        .pipe(gulp.dest('./assets/fonts'));
 });
 
 //Templates
@@ -63,21 +66,26 @@ gulp.task('templates', function(){
 //javascripts
 gulp.task('javascripts', function(){
     return gulp.src(config.javascriptsPath)
-        .pipe(concat('app.js'))
-        .pipe(jshint())
-        .pipe(gulp.dest('./assets/js'))
+        .pipe(concat('encurtador.min.js'))
+        .pipe(gulp.dest(config.jsOutputPath))
         .pipe(browserSync.stream());
 });
 
-gulp.task('serve', ['sass'], function() {
+gulp.task('wiredep', function(){
+  gulp.src('./index.html')
+    .pipe(wiredep())
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('serve', ['javascripts', 'wiredep', 'sass', 'templates'], function() {
     browserSync.init({
         server: {
             baseDir: "./"
         }
     });
-    gulp.watch(paths.templates, ['templates']);
-    gulp.watch(paths.javascripts, ['javascripts']);
-    gulp.watch(paths.sass, ['sass']);
+    gulp.watch(config.templatesPath, ['templates']);
+    gulp.watch(config.javascriptsPath, ['javascripts']);
+    gulp.watch(config.sassPath, ['sass']);
 });
 
 
