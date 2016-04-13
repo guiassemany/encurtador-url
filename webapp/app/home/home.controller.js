@@ -19,7 +19,7 @@
         activate();
 
         function activate() {
-
+          
         }
 
         function encurtarUrl(url){
@@ -27,6 +27,9 @@
             vm.urlEncurtadaTrigger = false;
             EncurtadorService.encurtarUrl(url).then(function(data){
               vm.urlEncurtada = data.data.shortUrl;
+              vm.urlEncurtadaTrigger = true;
+            }, function(err){
+              vm.urlEncurtada = "Que pena! Ocorreu algum erro. Tente novamente mais tarde";
               vm.urlEncurtadaTrigger = true;
             });
         }
