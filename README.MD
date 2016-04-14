@@ -19,7 +19,7 @@
 * ``` gulp serve ```
 
 
-Após executar o ``` php artisan serve ``` e o ``` gulp serve ``` baster ir até localhost:3000 e testar o encurtador.
+Após executar o ``` php artisan serve ``` e o ``` gulp serve ``` basta ir até localhost:3000 e testar o encurtador.
 
 A porta padrão para o servidor da api é 8000 - Se mudar esta porta é necessário alterar também a url da api no arquivo ```/webapp/app/services/encurtador.service.js```
 
