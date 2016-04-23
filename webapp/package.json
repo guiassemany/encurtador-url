@@ -1,7 +1,7 @@
 {
-  "name": "encurtador-url-chaordic",
+  "name": "encurtador-url",
   "version": "1.0.0",
-  "description": "Desafio: Encurtador de URL - AngularJS + Laravel",
+  "description": "Encurtador de URL - AngularJS + Laravel",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

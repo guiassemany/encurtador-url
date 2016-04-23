@@ -1,6 +1,6 @@
 {
-  "name": "encurtador-url-chaordic",
-  "description": "Desafio: Encurtador de URL - AngularJS + Laravel",
+  "name": "encurtador-url",
+  "description": "Encurtador de URL - AngularJS + Laravel",
   "main": "app.js",
   "authors": [
     "Guilherme Assemany"
