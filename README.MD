@@ -1,5 +1,9 @@
 # Encurtador de URLS
 
+---
+![Encurtador1](https://github.com/guiassemany/encurtador-url/blob/master/Docs/encurtador.gif?raw=true)
+
+---
 ## Pré Requisitos
 * Instalar o NPM
 * Instalar o Gulp e o Bower
@@ -24,6 +28,3 @@ Após executar o ``` php artisan serve ``` e o ``` gulp serve ``` basta ir até 
 A porta padrão para o servidor da api é 8000 - Se mudar esta porta é necessário alterar também a url da api no arquivo ```/webapp/app/services/encurtador.service.js```
 
 A porta padrão para o servidor do webapp é 3000 - Servidor gerado pelo BrowserSync
-
----
-![Encurtador1](https://github.com/guiassemany/encurtador-url/blob/master/Docs/pic1.png?raw=true)
